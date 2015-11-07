@@ -1,5 +1,6 @@
 package br.com.senai.postocorreio.model;
 
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,15 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import br.com.senai.postocorreio.model.Cidade;
-import br.com.senai.postocorreio.model.Familia;
 
 @Entity
 @Table(name="PESSOA")
-public class Pessoa {
+public class Pessoa implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
