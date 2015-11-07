@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Pessoa implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nome", length = 50)

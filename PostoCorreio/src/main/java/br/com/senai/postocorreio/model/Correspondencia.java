@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
 public class Correspondencia implements Serializable {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @ManyToOne(cascade = CascadeType.ALL, optional = true, fetch = FetchType.EAGER)
