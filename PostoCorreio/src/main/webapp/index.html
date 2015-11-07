@@ -1,10 +1,34 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<!doctype html>
+<html ng-app="app">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="content-language" content="pt-br" />
+      <title>AngularJS: Single Page com ngView e ngRoute</title>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+   </head>
+ 
+   <body>
+      <ul class="nav nav-tabs">
+         <li ng-class="{active: activetab == '/'}"><a href="/home">Home</a></li>
+         <li ng-class="{active: activetab == '/corresp'}"><a href="/corresp">Correspondência</a></li>
+         <li ng-class="{active: activetab == '/familia'}"><a href="/familia">Familia</a></li>
+         <li ng-class="{active: activetab == '/pessoa'}"><a href="/pessoa">Pessoas</a></li>
+         <li ng-class="{active: activetab == '/cidade'}"><a href="/cidade">Cidades</a></li>
+         <li ng-class="{active: activetab == '/usuario'}"><a href="/usuario">Usuários</a></li>
+      </ul>
+ 
+      <div ng-view></div>
+ 
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+ 
+      <script src="app.js"></script>
+      <script src="controllers/controllers.js"></script>
+        <script src="webjars/jquery/2.1.4/dist/jquery.min.js"></script>
+        <script src="webjars/bootstrap/3.3.5/dist/js/bootstrap.min.js"></script>
+        <script src="webjars/angular/1.4.7/angular.min.js"></script>
+        <script src="webjars/angular-ui-router/0.2.15/release/angular-ui-router.min.js"></script>
+        <script src="webjars/angular-bootstrap/0.14.2/ui-bootstrap-tpls.min.js"></script>
+        <script src="webjars/angularjs-rails-resource/1.2.3/angularjs-rails-resource.min.js"></script>  
+   </body>
 </html>
