@@ -55,6 +55,17 @@ public class CorrespondenciaResource {
         return Response.ok(entity).build();
         }
     
+    //Este método retorna as correspondências não entregues de todos as pessoas da familia da pessoa informada no id
+    @GET
+    @Path("/familia/{id}")
+    public Response listarFamilia(@PathParam("id") Long id) {
+       System.out.println("depurar");
+        List<Correspondencia> correspondencia = correspondenciaDAO.listaFamilia(id);
+        
+        GenericEntity entity = new GenericEntity<List<Correspondencia>>(correspondencia){};
+        return Response.ok(entity).build();
+        }
+    
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
