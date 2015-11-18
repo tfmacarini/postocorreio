@@ -11,6 +11,16 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>USUARIOS</div>
+        <div>USUARIOS AA</div>
+        <table style="width: 100%">
+            <tr ng-repeat="usuario in lista">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.usuario}}</td>
+                <td><button class="btn" ng-click="editar(contato)">Editar</button></td>
+                <td><button class="btn" ng-click="deletar(contato)">Deletar</button></td>
+            </tr>
+        </table>
     </body>
 </html>
+
+

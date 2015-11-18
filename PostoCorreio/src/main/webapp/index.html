@@ -1,34 +1,51 @@
 <!doctype html>
-<html ng-app="app">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta http-equiv="content-language" content="pt-br" />
-      <title>AngularJS: Single Page com ngView e ngRoute</title>
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
-   </head>
- 
-   <body>
-      <ul class="nav nav-tabs">
-         <li ng-class="{active: activetab == '/'}"><a href="/home">Home</a></li>
-         <li ng-class="{active: activetab == '/corresp'}"><a href="/corresp">Correspondência</a></li>
-         <li ng-class="{active: activetab == '/familia'}"><a href="/familia">Familia</a></li>
-         <li ng-class="{active: activetab == '/pessoa'}"><a href="/pessoa">Pessoas</a></li>
-         <li ng-class="{active: activetab == '/cidade'}"><a href="/cidade">Cidades</a></li>
-         <li ng-class="{active: activetab == '/usuario'}"><a href="/usuario">Usuários</a></li>
-      </ul>
- 
-      <div ng-view></div>
- 
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
- 
-      <script src="app.js"></script>
-      <script src="controllers/controllers.js"></script>
-        <script src="webjars/jquery/2.1.4/dist/jquery.min.js"></script>
-        <script src="webjars/bootstrap/3.3.5/dist/js/bootstrap.min.js"></script>
-        <script src="webjars/angular/1.4.7/angular.min.js"></script>
-        <script src="webjars/angular-ui-router/0.2.15/release/angular-ui-router.min.js"></script>
-        <script src="webjars/angular-bootstrap/0.14.2/ui-bootstrap-tpls.min.js"></script>
-        <script src="webjars/angularjs-rails-resource/1.2.3/angularjs-rails-resource.min.js"></script>  
-   </body>
+<html ng-app="PostoCorreio">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PostoCorreio</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="stylesheet" href="webjars/bootstrap/3.3.5/dist/css/bootstrap.min.css">
+    </head>
+    <body>      
+        <div class="container">
+           <div style="margin-top:20px;">   
+             <nav class="navbar navbar-default">
+               <div class="container-fluid">
+                 <div class="navbar-header">
+                   <a class="navbar-brand" href="#">Posto Correio</a>
+                 </div>
+                 <div>
+                   <ul class="nav navbar-nav">
+                     <li class="active"><a href="#">Home</a></li>
+                     <li><a href="#">Correspondências</a></li>
+                     <li><a data-ui-sref="familia">Famílias</a></li> 
+                     <li><a href="#">Pessoas</a></li> 
+                     <li><a href="#">Cidades</a></li> 
+                     <li><a data-ui-sref="usuario">Usuários</a></li> 
+                   </ul>
+                 </div>
+               </div>
+             </nav>
+           </div>
+        </div>
+
+        <div class="container" data-ui-view>
+        </div>
+        <script src="webjars/jquery/2.1.4/dist/jquery.js"></script>
+        <script src="webjars/bootstrap/3.3.5/dist/js/bootstrap.js"></script>
+        <script src="webjars/angular/1.4.7/angular.js"></script>
+        <script src="webjars/angular-ui-router/0.2.15/release/angular-ui-router.js"></script>
+        <script src="webjars/angular-ui-date/0.0.8/src/date.js"></script>
+        <script src="webjars/angular-bootstrap/0.14.2/ui-bootstrap-tpls.js"></script>
+        <script src="webjars/angularjs-rails-resource/1.2.3/angularjs-rails-resource.js"></script>
+        <script src="controllers/app.js"></script>
+        <script src="controllers/ctrlusuarios.js"></script>
+        <script src="controllers/ctrlhome.js"></script>
+        <script src="controllers/ctrlfamilias.js"></script>
+        <script src="models/usuarios.js"></script>
+        <script src="models/familias.js"></script>
+    </body>
 </html>
