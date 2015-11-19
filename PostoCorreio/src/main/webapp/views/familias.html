@@ -3,12 +3,11 @@
     <h3>Famílias</h3>  
   </div>    
 </div> 
-<hr>
 <div class="row">  
     <div class="col-md-6" style="margin-bottom:5px;">
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#insert">Inserir</button> 
     </div>
-    <div class="col-md-6" class="pull-right">
+    <div class="col-md-6">
         <div class="input-group custom-search-form ">
             <input type="text" class="form-control" ng-model="criterioDeBusca">
             <span class="input-group-btn">
@@ -25,22 +24,17 @@
 
         <table id="mytable" class="table table-bordered table-striped table-condensed">
             <thead>
-            <th>Descrição<i class="fa fa-sort pull-right"></i></a></th>
-            <th style="width: 10px;"></th>                                                              
+            <th style="width: 10px;">Código<i class="fa fa-sort pull-right"></i></th>
+            <th>Descrição<i class="fa fa-sort pull-right"></i></th>
+            <th style="width: 10px;"></th>  
+            <th style="width: 10px;"></th>  
             </thead>
             <tbody>
                 <tr ng-repeat="familia in lista| filter:criterioDeBusca ">
+                    <td>{{familia.id}}</td>
                     <td>{{familia.descricao}}</td>    
-                    <td>         
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Editar <span class="caret"></span>  
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#"  ng-click="editar(familia)" data-toggle="modal" data-target="#edit" data-title="Edit"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a></li>
-                                <li><a href="#" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir</a></li>
-                            </ul>
-                        </div>
-                    </td>
+                    <td><button class="btn" ng-click="editar(familia)" data-toggle="modal" data-target="#edit" data-title="Edit">Editar</button></td>
+                    <td><button class="btn" ng-click="deletar(familia)">Excluir</button></td>
                 </tr>
             </tbody>            
         </table>  
@@ -90,25 +84,3 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                <h4 class="modal-title custom_align" id="Heading">Excluir</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Você quer excluir este registro?</div>
-
-            </div>
-            <div class="modal-footer ">
-                <button type="button" class="btn btn-success" ng-click="deletar(familia)">Sim</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-            </div>
-        </div>
-        <!-- /.modal-content --> 
-    </div>
-    <!-- /.modal-dialog --> 
-</div> 
