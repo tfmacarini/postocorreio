@@ -24,7 +24,7 @@ public class Correspondencia implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne(cascade = CascadeType.ALL, optional = true, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.DETACH, optional = true, fetch = FetchType.EAGER)
     @JoinColumn(name="pessoa", nullable=true)
     private Pessoa pessoa;
     
@@ -32,11 +32,11 @@ public class Correspondencia implements Serializable {
     @Column(name = "dt_chegada", nullable = true)
     private Date dt_chegada;
     
-    @Column(name = "tipo", length = 5)
+    @Column(name = "tipo", length = 30)
     private String tipo;
     
-    @Column(name = "entregue", length = 1)
-    private Boolean entregue;
+    @Column(name = "entregue", length = 10)
+    private String entregue;
 
     public Correspondencia() {
     }
@@ -73,11 +73,11 @@ public class Correspondencia implements Serializable {
         this.tipo = tipo;
     }
 
-    public Boolean getEntregue() {
+    public String getEntregue() {
         return entregue;
     }
 
-    public void setEntregue(Boolean entregue) {
+    public void setEntregue(String entregue) {
         this.entregue = entregue;
     }
     

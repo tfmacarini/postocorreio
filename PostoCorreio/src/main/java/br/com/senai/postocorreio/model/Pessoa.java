@@ -23,7 +23,7 @@ public class Pessoa implements Serializable {
     @Column(name = "nome", length = 50)
     private String nome;
     
-    @ManyToOne(cascade = CascadeType.ALL, optional = true, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.DETACH, optional = true, fetch = FetchType.EAGER)
     @JoinColumn(name="cidade", nullable=true)
     private Cidade cidade;
     
@@ -39,7 +39,7 @@ public class Pessoa implements Serializable {
     @Column(name = "telefone")
     private String telefone;
     
-    @ManyToOne(cascade = CascadeType.ALL, optional = true, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.DETACH, optional = true, fetch = FetchType.EAGER)
     @JoinColumn(name="familia", nullable=true)
     private Familia familia;
 

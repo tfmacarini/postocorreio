@@ -51,7 +51,7 @@ public class CorrespondenciaDAO {
         TypedQuery<Correspondencia> c = em.createQuery("SELECT c "
                 + "FROM Pessoa p INNER JOIN Correspondencia c "
                 + "WHERE p.familia = :idFamilia "
-                + "AND c.entregue = false "
+                + "AND c.entregue = 'NAO' "
                 + "ORDER BY c.dt_chegada", Correspondencia.class).setParameter("idFamilia", idFamilia.getFamilia());
         
         return c.getResultList(); 

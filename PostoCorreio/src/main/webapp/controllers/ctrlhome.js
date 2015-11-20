@@ -5,7 +5,7 @@ function HomeController($scope) {
 }
 function HomeRoute($stateProvider) {
     $stateProvider.state('home', {
-        url: '/',
+        url: '/home',
         templateUrl: 'views/home.html',
         controller: 'HomeController'
     });
