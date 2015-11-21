@@ -41,7 +41,7 @@ public class LoginController extends HttpServlet {
                 resp.sendRedirect("#/home");
             } catch (LoginInvalidoException | SQLException ex) {
                 req.setAttribute("mensagem", ex.getMessage());
-                req.getRequestDispatcher("views/login.jsp").forward(req, resp);
+                req.getRequestDispatcher("views/login.html").forward(req, resp);
             }
         } else {
             String login = "";
@@ -52,7 +52,7 @@ public class LoginController extends HttpServlet {
                 }
             }
             req.setAttribute("login", login);
-            req.getRequestDispatcher("views/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("views/login.html").forward(req, resp);
         }
 
     }

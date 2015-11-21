@@ -26,7 +26,7 @@ public class LoginFilter implements javax.servlet.Filter {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
-        if (!req.getRequestURI().endsWith("/login.jsp")
+        if (!req.getRequestURI().endsWith("views/login.html")
                 && !req.getRequestURI().endsWith("/login")
                 && !req.getRequestURI().endsWith("/logout")) {
             if (req.getSession().getAttribute("usuario") != null) {
