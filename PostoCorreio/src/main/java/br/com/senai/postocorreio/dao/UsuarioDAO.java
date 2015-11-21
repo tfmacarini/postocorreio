@@ -1,9 +1,11 @@
 package br.com.senai.postocorreio.dao;
 
 import br.com.senai.postocorreio.model.Usuario;
+import java.sql.SQLException;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
@@ -33,6 +35,19 @@ public class UsuarioDAO {
         TypedQuery<Usuario> q = em.createQuery("SELECT u "
                 + "FROM Usuario u ORDER BY u.usuario", Usuario.class);
         return q.getResultList();
+    }
+    
+    public Usuario login(String username, String password) throws SQLException, LoginInvalidoException {
+        
+        try{
+            String jpql = "SELECT u FROM Usuario u WHERE u.usuario = :nome AND u.senha = :senha";
+            TypedQuery<Usuario> q = em.createQuery(jpql, Usuario.class);
+            q.setParameter("nome", username);
+            q.setParameter("senha", password);
+            return q.getSingleResult();
+        }catch(NoResultException ex){
+            throw new LoginInvalidoException();
+        }
     }
     
 }
