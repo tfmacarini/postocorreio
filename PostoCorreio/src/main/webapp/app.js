@@ -5,7 +5,7 @@ angular.module('PostoCorreio', [
     'ui.bootstrap',
     'rails'
 ]).config(function ($urlRouterProvider, RailsResourceProvider, railsSerializerProvider) {
-    $urlRouterProvider.when('', '/');
+    $urlRouterProvider.when('', '/login');
    
     RailsResourceProvider.rootWrapping(false);
     railsSerializerProvider.underscore(angular.identity).camelize(angular.identity);

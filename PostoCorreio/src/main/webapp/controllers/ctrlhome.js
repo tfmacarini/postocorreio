@@ -1,7 +1,7 @@
 'use strict';
 
 function HomeController($scope) {
-    $scope.mensagem = 'Teste';
+    
 }
 function HomeRoute($stateProvider) {
     $stateProvider.state('home', {
